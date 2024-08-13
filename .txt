@@ -1,0 +1,194 @@
+اريد ربط ملف HTML بملف اخر HTML هاذا كود الصفحه الرئيسيه <!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>موقع فن الجرافيك للتصميم والإعلان</title>
+    <link rel="icon" href="https://e7.pngegg.com/pngimages/862/317/png-clipart-paintbrush-font-design-microsoft-azure-brush.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="home.css">
+    <link rel="stylesheet" type="text/css" href="home.html">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo .png.png" alt="لوجو الموقع" class="small-logo">
+        </div>
+        <div class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+            &#9776;
+        </div>
+    </header>
+    <nav id="sidebar" class="sidebar">
+        <div class="close-btn" id="close-btn" aria-label="Close menu">
+            &times;
+        </div>
+        <a href="index.html" class="button">الرئيسية</a>
+        <a href="https://www.youtube.com/@GraphicArt-t8y" class="button" target="_blank" rel="noopener noreferrer">قناتنا على يوتيوب</a>
+        <a href="designs.html" class="button">تصميمات</a>
+        <a href="https://arbfonts.com/" class="button" target="_blank" rel="noopener noreferrer">خطوط</a>
+        <a href="https://wa.me/01063923704" class="button" target="_blank" rel="noopener noreferrer">تواصل معنا</a>
+        <a href="start.html" target="_blank" class="button small-button" rel="noopener noreferrer">ابدأ</a>
+        <div id="google-signin-button"></div>
+    </nav>
+    <main class="main-content">
+        <img src="pin.png" alt="صورة لاب توب" aria-hidden="true">
+        <div class="overlay">
+            <div class="moving-text">
+                <span>مرحبا بكم</span><br>
+                <span>في موقع فن الجرافيك للتصميم والإعلان</span>
+            </div>
+        </div>
+        <div class="text-below">
+            <h1>مرحبا بكم في موقعنا للتصميم والإعلان</h1>
+            <p>أهلاً وسهلاً بكم في موقعنا للتصميم والإعلان. نحن نقدم خدمة تصميم متميزة.</p>
+        </div>
+    </main>
+    <script>
+        function handleCredentialResponse(response) {
+            console.log("Encoded JWT ID token: " + response.credential);
+        }
+
+        window.onload = function () {
+            google.accounts.id.initialize({
+                client_id: 'YOUR_GOOGLE_CLIENT_ID',
+                callback: handleCredentialResponse
+            });
+            google.accounts.id.renderButton(
+                document.getElementById("google-signin-button"),
+                { theme: "outline", size: "large" }
+            );
+            google.accounts.id.prompt();
+        }
+
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+
+        document.getElementById('close-btn').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.remove('active');
+        });
+    </script>
+</body>
+</html>
+كود الموقع الثاني<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرض الصور</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .gallery-item {
+            margin: 10px;
+            text-align: center;
+        }
+        .gallery img {
+            width: 200px;
+            height: 200px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .modal-content {
+            max-width: 90%;
+            max-height: 80%;
+            animation: zoomIn 0.5s;
+        }
+        .modal-description {
+            color: #fff;
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.1);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="gallery">
+    <div class="gallery-item">
+        <img src="aaa.png" alt="صورة 1" onclick="openModal(this.src, 'مرحبابكم في موقعنا فن اجرافيك')">
+        <p>وصف الصورة 1</p>
+    </div>
+    <div class="gallery-item">
+        <img src="aaa.png" alt="صورة 2" onclick="openModal(this.src, 'وصف الصورة 2')">
+        <p>  عخسياسخشخشاخشلارسخشحشهباصثطفغهلهبس\هخيبا9غفث</p>
+    </div>
+    <div class="gallery-item">
+        <img src="aaa.png" alt="صورة 3" onclick="openModal(this.src, 'وصف الصورة 3')">
+        <p>وصف الصورة 3</p>
+    </div>
+    <!-- أضف المزيد من الصور هنا -->
+</div>
+
+<div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="modalDescription" class="modal-description"></div>
+</div>
+
+<script>
+    function openModal(src, description) {
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("img01");
+        var modalDesc = document.getElementById("modalDescription");
+        modal.style.display = "flex";
+        modalImg.src = src;
+        modalDesc.textContent = description;
+    }
+
+    function closeModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+    }
+</script>
+
+</body>
+</html>         اريد عند الضغط على تصميمات تفتح الصفحة الثانية و اريد القائمة الجانبية تظهر في الصفحة الجديدة وعن الضغط على الرئيسية يكوم  بل العود الى الصفحة الرئيسيه
+
